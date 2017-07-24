@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Documentation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <style>
+        body {
+            position: relative;
+        }
+
+        .no-margin {
+            margin: 0;
+        }
+
+        .mbn {
+            margin-bottom: 0 !important;
+        }
+
+        .sidebar nav .nav > .active > a {
+            border-left: 2px solid #563d7c;
+            color: #563d7c;
+            font-weight: 600;
+        }
+
+        .sidebar .nav .nav a {
+            font-size: 13px;
+            padding: 5px 15px 5px 30px;
+        }
+
+        .bs-callout {
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #eee;
+            border-left-width: 5px;
+            border-radius: 3px;
+        }
+
+        .bs-callout h4 {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .bs-callout p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bs-callout code {
+            border-radius: 3px;
+        }
+
+        .bs-callout + .bs-callout {
+            margin-top: -5px;
+        }
+
+        .bs-callout-default {
+            border-left-color: #777;
+        }
+
+        .bs-callout-default h4 {
+            color: #777;
+        }
+
+        .bs-callout-primary {
+            border-left-color: #428bca;
+        }
+
+        .bs-callout-primary h4 {
+            color: #428bca;
+        }
+
+        .bs-callout-success {
+            border-left-color: #5cb85c;
+        }
+
+        .bs-callout-success h4 {
+            color: #5cb85c;
+        }
+
+        .bs-callout-danger {
+            border-left-color: #ce4844;
+        }
+
+        .bs-callout-danger h4 {
+            color: #ce4844;
+        }
+
+        .bs-callout-warning {
+            border-left-color: #f0ad4e;
+        }
+
+        .bs-callout-warning h4 {
+            color: #f0ad4e;
+        }
+
+        .bs-callout-info {
+            border-left-color: #1b809e;
+        }
+
+        .bs-callout-info h4 {
+            color: #1b809e;
+        }
+
+        .bs-callout ol {
+            padding-left: 15px;
+        }
+
+        a.disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target="#navbar-spy">
+<div class="page-content">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">LPW</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Public API</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Libraries <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="js.html">Javascript</a></li>
+                            <li><a href="" class="disabled" aria-disabled="true">PHP</a></li>
+                            <li><a href="wordpress.html">Wordpress</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-8">
+                <div class="panel panel-default">
+                    <h3 id="basics" class="panel-heading no-margin">Quick Start</h3>
+                    <div class="panel-body">
+                        <div id="intro" class="bs-callout bs-callout-info">
+                            <h4>WordPress Information</h4>
+
+                            <p>To install this theme you must have a working version of WordPress already installed. If
+                                you need help installing WordPress, follow the instructions in WordPress Codex. Below
+                                are all the useful links for WordPress information.</p>
+                            <ol>
+                                <li><a href='http://codex.wordpress.org/Installing_WordPress' target="_blank">WordPress
+                                    Codex</a> – General info about WordPress and how to install on your server
+                                </li>
+                                <li><a href='http://codex.wordpress.org/First_Steps_With_WordPress' target="_blank">First
+                                    Steps With WordPress</a> – General info about multiple topics about WordPress.
+                                </li>
+                                <li><a href='http://codex.wordpress.org/FAQ_New_To_WordPress' target="_blank">FAQ New To
+                                    WordPress</a> – The most popular FAQ’s regarding WordPress.
+                                </li>
+                            </ol>
+                        </div>
+                        <div id="hosting" class="bs-callout bs-callout-info">
+                            <h4>Hosting recommendation:</h4>
+                            <p>
+                                We recommending hosting with cPanel.
+                                List of popular providers:
+                            <ul>
+                                <li><a href='http://hostgator.com' target="_blank">Hostgator.com</a></li>
+                                <li><a href='http://godaddy.com' target="_blank">godaddy.com</a></li>
+                            </ul>
+
+                            </p>
+                        </div>
+                            <div class="lead">
+                                Theme download url:<br>
+                                <code>http://lpwdev.com/lpw_wordpress/leadingprops.zip</code>
+                            </div>
+                            <div id="theme-installation" class="bs-callout bs-callout-info">
+                                <h4>Theme installation:</h4>
+                                <ol>
+                                    <li><a href="http://lpwdev.com/lpw_wordpress/leadingprops.zip" target="_blank">Download
+                                        LPW theme</a></li>
+                                    <li>Log in to the WordPress Administration Panels.</li>
+                                    <li>Select the Appearance panel, then Themes.</li>
+                                    <li>Select Add New.</li>
+                                    <li>Use the Upload link in the top links row to up
+                                        load a zipped copy of a Theme that you have previously downloaded to your
+                                        machine.
+                                    </li>
+                                </ol>
+                            </div>
+
+                        <div id="theme-setup" class="bs-callout bs-callout-info">
+                            <h4>Theme setup:</h4>
+                            <ol>
+                                <li>Activate theme <a href="img/activate_theme.png" target="_blank">Show image</a></li>
+                                <li>Install <strong>qtranslate</strong> <a href="img/qtranslate_settings.png" target="_blank">Show
+                                    image</a>
+                                </li>
+                                <li>Setup <strong>qtranslate</strong> <a href="img/install_qtranslate.png" target="_blank">Show image</a>
+                                    <p>Supported locales:</p>
+                                    <ul>
+                                        <li class="list-group-item">"ar" - "العربية"</li>
+                                        <li class="list-group-item">"en" - "English"</li>
+                                        <li class="list-group-item">"fr" - "Français"</li>
+                                        <li class="list-group-item">"de" - "Deutsch"</li>
+                                        <li class="list-group-item">"ru" - "Русский"</li>
+                                        <li class="list-group-item">"cs" - "Čeština"</li>
+                                        <li class="list-group-item">"zh" - "简体中文"</li>
+                                        <li class="list-group-item">"it" - "Italiano"</li>
+                                        <li class="list-group-item">"ja" - "日本語"</li>
+                                        <li class="list-group-item">"ko" - "한국어"</li>
+                                        <li class="list-group-item">"nb" - "Norwegian Bokmål"</li>
+                                        <li class="list-group-item">"th" - "ไทย"</li>
+                                    </ul>
+                                    <p>More locales on demand <a href="mailto:support@leadingproperties.com">support@leadingproperties.com</a>
+                                    </p>
+                                </li>
+                                <li>Select the <strong>Options -> General</strong> panel
+                                    Be sure that you follow instructions on all tabs.
+                                    <ul>
+                                        <li><strong>API</strong> - URL and Key</li>
+                                        <li><strong>Header</strong> - Logo/Phone/Email ...</li>
+                                        <li><strong>Footer</strong> - information in footer (like address)</li>
+                                        <li><strong>Social</strong> - Social links</li>
+                                        <li><strong>Google services</strong> - Google API key. For Google places service
+                                            (autocomplete). <a
+                                                    href="https://developers.google.com/places/web-service/get-api-key"
+                                                    target="_blank">GET A KEY</a></li>
+                                        <li><strong>Styles</strong> - Custom styles</li>
+                                        <li><strong>Scripts</strong> - Custom scripts as example analytics scripts
+                                            (Google analytics)
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Default locations</strong> can be assigned to show on index page. <a href="img/default_location.png" target="_blank">Show image</a>
+                                 </li>
+                            </ol>
+                            <h4>Important:</h4>
+                            <p>LPW theme creating default pages (Pages panel). This pages created to assign scripts to
+                                list property objects from our API, and holding URL routing</p>
+                            <p><strong>Don't delete this pages.</strong> You can recreate or reassign this pages in
+                                Advanced options, but we aware you from this. Especially if you site is already in
+                                production. </p>
+                        </div>
+
+                        <div id="theme-dev" class="bs-callout bs-callout-info">
+                            <h4>Theme development</h4>
+                            <p>Be sure that you are using latest version of theme (check theme update in dashboard).</p>
+
+                            <p>Our platform is on stage of active development and improvements. And our Wordpress theme updating too, to use all features of platform.</p>
+                            <p>We don't recommending to change core files of our theme, because this changes will be rewrited on update.</p>
+                            <p>Wordpress following this way too, and they have solution - <a href="https://codex.wordpress.org/Child_Themes" target="_blank">Wordpress Child Themes.</a></p>
+                            <p>Please follow documentation provided by Wordress for Child Theme development. <a href="https://codex.wordpress.org/Child_Themes" target="_blank">Wordpress Child Themes.</a></p>
+                            <p>We already create base child theme for easy start. You can download it <a href="http://lpwdev.com/lpw_wordpress/lpw-wordpress-child-theme.zip" target="_blank">here.</a> </p>
+
+                            <div class="lead">
+                                Child Theme download url:<br>
+                                <code>http://lpwdev.com/lpw_wordpress/lpw-wordpress-child-theme.zip</code>
+                            </div>
+                        </div>
+
+                        <div id="support" class="bs-callout bs-callout-info">
+                            <h4>Support</h4>
+                            <p>Be sure that you are using latest version of theme (check theme update in dashboard).</p>
+
+                            <p>For questions about theme installation please mail to:<a
+                                    href="mailto:support@leadingproperties.com">support@leadingproperties.com</a></p>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <h3 id="license" class="panel-heading no-margin">License</h3>
+                            <div class="panel-body">
+                        <pre>
+                                MIT License
+
+Copyright (c) 2016 The Leading Properties of the World
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+                            </pre>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!--Basics-->
+
+            </div>
+
+            <div class="col-xs-4 sidebar" id="navbar-spy">
+                <nav role="navigation" class="affix">
+                    <ul class="nav list-unstiled">
+                        <li><a href="#intro">Wordpress Information</a></li>
+                        <li><a href="#hosting">Hosting Information</a></li>
+                        <li><a href="#theme-installation">Theme Installation</a></li>
+                        <li><a href="#theme-setup">Theme Setup</a></li>
+                        <li><a href="#theme-dev">Theme Development</a></li>
+                        <li><a href="#support">Support</a></li>
+                        <li><a href="#license">License</a></li>
+                    </ul>
+                </nav>
+            </div><!--Right sidebar-->
+        </div>
+    </div>
+</div>
+
+<script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sons-of-obsidian"></script>
+</body>
+</html>
