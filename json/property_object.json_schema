@@ -1,0 +1,1362 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {},
+  "id": "http://example.com/example.json",
+  "properties": {
+    "property_object": {
+      "properties": {
+        "status_id": {
+          "type": "integer",
+          "description": "1- Available; 2  - Not available; 3 - Sold;"
+        },
+        "id": {
+          "type": "integer",
+          "description": "ID in your system"
+        },
+        "code": {
+          "type": "string",
+          "description": "Ref. number or code"
+        },
+        "construction_stage_id": {
+          "type": "integer",
+          "description": "1 - Project; 2 - Under construction; 3-Finished;"
+        },
+        "for_rent": {
+          "type": "boolean",
+          "description": "Available for rent: true/false"
+        },
+        "for_sale": {
+          "type": "boolean",
+          "description": "Available for sale: true/false"
+        },
+        "multi_property": {
+          "type": "boolean",
+          "description": "This object contains information about several properties. Example: several apartments in new residence. I this case min/max main options will be allowed"
+        },
+        "offmarket": {
+          "type": "boolean",
+          "description": "Off market property: true/false. Default false. "
+        },
+        "property_object_type_id": {
+          "type": "integer",
+          "description": "Types: apartment, house, commercial. http://lpwdev.com/json/property_object_types.json"
+        },
+        "property_object_subtype_id": {
+          "type": "integer",
+          "description": "http://lpwdev.com/json/property_object_types.json"
+        },
+        "property_images": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "description": "Array of property images URLs. NO WATERMARKS please."
+        },
+        "property_object_address": {
+          "properties": {
+            "country": {
+              "type": "string"
+            },
+            "region": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "formatted_address": {
+              "type": "string"
+            },
+            "latitude": {
+              "type": "number"
+            },
+            "longitude": {
+              "type": "number"
+            },
+            "place_id": {
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "description": "Parse order: 1. latitude and longitude; 2. place_id; 3. formatted_address; 4. country+region+city. Parsing will stop on first filled combination."
+        },
+        "property_object_price": {
+          "properties": {
+            "sale": {
+              "properties": {
+                "currency_code": {
+                  "type": "string"
+                },
+                "max": {
+                  "type": "integer"
+                },
+                "min": {
+                  "type": "integer"
+                },
+                "on_demand": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object",
+              "description": "Sale price."
+            },
+            "rent": {
+              "properties": {
+              },
+              "type": "object",
+              "description": "Rent price"
+            }
+          },
+          "type": "object",
+          "description": "Property sale/rent prices"
+        },
+        "property_object_main_options": {
+          "properties": {
+            "rooms": {
+              "properties": {
+                "max": {
+                  "type": "integer"
+                },
+                "min": {
+                  "type": "integer"
+                }
+              },
+              "type": "object",
+              "required": [
+                "min"
+              ]
+            },
+            "area": {
+              "properties": {
+                "max": {
+                  "type": "integer"
+                },
+                "min": {
+                  "type": "integer"
+                }
+              },
+              "type": "object",
+              "required": [
+                "min"
+              ]
+            },
+            "bedrooms": {
+              "properties": {
+                "max": {
+                  "type": "integer"
+                },
+                "min": {
+                  "type": "integer"
+                }
+              },
+              "type": "object",
+              "required": [
+                "min"
+              ]
+            },
+            "bathrooms": {
+              "properties": {
+                "max": {
+                  "type": "integer"
+                },
+                "min": {
+                  "type": "integer"
+                }
+              },
+              "type": "object",
+              "required": [
+                "min"
+              ]
+            },
+            "wc": {
+              "properties": {
+                "max": {
+                  "type": "integer"
+                },
+                "min": {
+                  "type": "integer"
+                }
+              },
+              "type": "object",
+              "required": [
+                "min"
+              ]
+            },
+            "land_area": {
+              "properties": {
+                "max": {
+                  "type": "integer"
+                },
+                "min": {
+                  "type": "integer"
+                }
+              },
+              "type": "object",
+              "required": [
+                "min"
+              ],
+              "description": "In case of house - area of land, m2"
+            },
+            "floor": {
+              "type": "integer",
+              "description": "In case of apartment -Floor in building"
+            },
+            "number_of_storeys": {
+              "type": "integer",
+              "description": "In case of house - number of storeys (floors) in building"
+            },
+            "gross_area": {
+              "type": "integer",
+              "description": "In case of commercial - gross area, m2"
+            },
+            "net_area": {
+              "type": "integer",
+              "description": "In case of commercial - net area, m2"
+            }
+          },
+          "type": "object",
+          "required": [
+            "rooms",
+            "area"
+          ]
+        },
+        "property_rent": {
+          "properties": {
+            "persons_max": {
+              "type": "integer"
+            },
+            "child_friendly": {
+              "type": "boolean"
+            },
+            "pets_allowed": {
+              "type": "boolean"
+            },
+            "long_rent": {
+              "properties": {
+                "monthly_rate": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "vat": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "deposit": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "commission": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "on_demand": {
+                  "type": "boolean",
+                  "description": "Price `on demand`"
+                },
+                "vat_in_price": {
+                  "type": "boolean"
+                },
+                "deposit_on_demand": {
+                  "type": "boolean"
+                },
+                "commission_on_demand": {
+                  "type": "boolean"
+                },
+                "currency_code": {
+                  "type": "boolean",
+                  "description": "ISO_4217 currency code"
+                }
+              },
+              "type": "object"
+            },
+            "short_rent": {
+              "properties": {
+                "ls_daily_rate": {
+                  "type": "integer",
+                  "description": "Low season daily rate"
+                },
+                "ms_daily_rate": {
+                  "type": "integer",
+                  "description": "Medium season daily rate"
+                },
+                "hs_daily_rate": {
+                  "type": "integer",
+                  "description": "High season daily rate"
+                },
+                "ls_weekly_rate": {
+                  "type": "integer",
+                  "description": "Low season weekly rate"
+                },
+                "ms_weekly_rate": {
+                  "type": "integer",
+                  "description": "Medium season weekly rate"
+                },
+                "hs_weekly_rate": {
+                  "type": "integer",
+                  "description": "High season weekly rate"
+                },
+                "ls_monthly_rate": {
+                  "type": "integer",
+                  "description": "Low season monthly rate"
+                },
+                "ms_monthly_rate": {
+                  "type": "integer",
+                  "description": "Medium season monthly rate"
+                },
+                "hs_monthly_rate": {
+                  "type": "integer",
+                  "description": "High season monthly rate"
+                },
+                "vat": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "deposit": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "commission": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "vat_in_price": {
+                  "type": "boolean",
+                  "description": ""
+                },
+                "deposit_on_demand": {
+                  "type": "boolean",
+                  "description": ""
+                },
+                "commission_on_demand": {
+                  "type": "boolean",
+                  "description": ""
+                },
+                "currency_code": {
+                  "type": "boolean",
+                  "description": "ISO_4217 currency code"
+                },
+                "on_demand": {
+                  "type": "boolean",
+                  "description": "Price `on demand`"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object",
+          "description": "If for_rent: true"
+        },
+        "property_additional_options": {
+          "properties": {
+            "flexibility_to_change_layout": {
+              "type": "boolean"
+            },
+            "possibility_to_purchase_neighbouring_apartment_and_merge_two_units": {
+              "type": "boolean"
+            },
+            "select_finishing": {
+              "type": "boolean"
+            },
+            "complete_or_partial_furnishing_is_available": {
+              "type": "boolean"
+            },
+            "possibility_to_expand_area": {
+              "type": "boolean"
+            },
+            "choice_of_furnishing": {
+              "type": "boolean"
+            },
+            "option_to_purchase_a_parking_spaces": {
+              "type": "boolean"
+            },
+            "option_to_rent_a_parking_spaces": {
+              "type": "boolean"
+            },
+            "option_to_build_an_additional_parking_space": {
+              "type": "boolean"
+            },
+            "possibility_to_purchase_neighbouring_houses": {
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "property_additional_options": {
+        "properties": {
+          "outdoor_parking_spaces": {
+            "type": "integer"
+          },
+          "indoor_parking_spaces": {
+            "type": "integer"
+          },
+          "parking_spaces_in_garage": {
+            "type": "integer"
+          },
+          "cellars": {
+            "type": "integer"
+          },
+          "private_lift": {
+            "type": "boolean"
+          },
+          "private_pool": {
+            "type": "boolean"
+          },
+          "wine_cellar": {
+            "type": "boolean"
+          },
+          "japanese_garden": {
+            "type": "boolean"
+          },
+          "private_mooring": {
+            "type": "boolean"
+          },
+          "private_garden": {
+            "type": "boolean"
+          },
+          "beach_access": {
+            "type": "boolean"
+          },
+          "summer_kitchen": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "property_benefits": {
+        "properties": {
+          "concierge_service": {
+            "type": "boolean"
+          },
+          "reception": {
+            "type": "boolean"
+          },
+          "conference_room": {
+            "type": "boolean"
+          },
+          "lobby": {
+            "type": "boolean"
+          },
+          "offices": {
+            "type": "boolean"
+          },
+          "24/7_security_service": {
+            "type": "boolean"
+          },
+          "CCTV": {
+            "type": "boolean"
+          },
+          "fitness_centre": {
+            "type": "boolean"
+          },
+          "gym": {
+            "type": "boolean"
+          },
+          "spa": {
+            "type": "boolean"
+          },
+          "wellness_center": {
+            "type": "boolean"
+          },
+          "pool": {
+            "type": "boolean"
+          },
+          "solarium": {
+            "type": "boolean"
+          },
+          "sauna": {
+            "type": "boolean"
+          },
+          "tennis_court": {
+            "type": "boolean"
+          },
+          "golf_course": {
+            "type": "boolean"
+          },
+          "squash_court": {
+            "type": "boolean"
+          },
+          "private_beach": {
+            "type": "boolean"
+          },
+          "garden": {
+            "type": "boolean"
+          },
+          "roof_garden": {
+            "type": "boolean"
+          },
+          "common_terrace": {
+            "type": "boolean"
+          },
+          "rooftop_terrace": {
+            "type": "boolean"
+          },
+          "recreation_area": {
+            "type": "boolean"
+          },
+          "BBQ_area": {
+            "type": "boolean"
+          },
+          "playground": {
+            "type": "boolean"
+          },
+          "gated_territory": {
+            "type": "boolean"
+          },
+          "parking": {
+            "type": "boolean"
+          },
+          "electric_car_charging_station": {
+            "type": "boolean"
+          },
+          "bicycle_parking": {
+            "type": "boolean"
+          },
+          "rent/service_of_yachts/boats": {
+            "type": "boolean"
+          },
+          "indoor_dock": {
+            "type": "boolean"
+          },
+          "cinema": {
+            "type": "boolean"
+          },
+          "restaurant": {
+            "type": "boolean"
+          },
+          "hotel": {
+            "type": "boolean"
+          },
+          "shop": {
+            "type": "boolean"
+          },
+          "laundry": {
+            "type": "boolean"
+          },
+          "hot_tub": {
+            "type": "boolean"
+          },
+          "childrens_pool": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "property_equipments": {
+        "properties": {
+          "wood_flooring": {
+            "type": "boolean"
+          },
+          "marble_floors": {
+            "type": "boolean"
+          },
+          "parquet_floors": {
+            "type": "boolean"
+          },
+          "heated_floors": {
+            "type": "boolean"
+          },
+          "bay_window": {
+            "type": "boolean"
+          },
+          "high_ceilings": {
+            "type": "boolean"
+          },
+          "wall_moldings": {
+            "type": "boolean"
+          },
+          "stove": {
+            "type": "boolean"
+          },
+          "fireplace": {
+            "type": "boolean"
+          },
+          "air_conditioning": {
+            "type": "boolean"
+          },
+          "fitted_wardrobe": {
+            "type": "boolean"
+          },
+          "kitchen_appliances": {
+            "type": "boolean"
+          },
+          "Internet": {
+            "type": "boolean"
+          },
+          "phone": {
+            "type": "boolean"
+          },
+          "CCTV": {
+            "type": "boolean"
+          },
+          "alarm": {
+            "type": "boolean"
+          },
+          "security_system": {
+            "type": "boolean"
+          },
+          "hot_tub": {
+            "type": "boolean"
+          },
+          "home_theater": {
+            "type": "boolean"
+          },
+          "central_heating": {
+            "type": "boolean"
+          },
+          "home_automation": {
+            "type": "boolean"
+          },
+          "satellite_tv": {
+            "type": "boolean"
+          },
+          "laminate_flooring": {
+            "type": "boolean"
+          },
+          "armored_front_door": {
+            "type": "boolean"
+          },
+          "tiled_flooring": {
+            "type": "boolean"
+          },
+          "solar_panels": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "property_layouts": {
+        "properties": {
+          "living_room": {
+            "type": "boolean"
+          },
+          "hallway": {
+            "type": "boolean"
+          },
+          "wardrobe": {
+            "type": "boolean"
+          },
+          "maids_room": {
+            "type": "boolean"
+          },
+          "study": {
+            "type": "boolean"
+          },
+          "kitchen": {
+            "type": "boolean"
+          },
+          "separate_dining_room": {
+            "type": "boolean"
+          },
+          "living_room_with_kitchenette": {
+            "type": "boolean"
+          },
+          "kitchen_with_dining_room": {
+            "type": "boolean"
+          },
+          "storeroom": {
+            "type": "boolean"
+          },
+          "utility_room": {
+            "type": "boolean"
+          },
+          "technical_premise": {
+            "type": "boolean"
+          },
+          "boiler_room": {
+            "type": "boolean"
+          },
+          "sauna": {
+            "type": "boolean"
+          },
+          "patio": {
+            "type": "boolean"
+          },
+          "veranda": {
+            "type": "boolean"
+          },
+          "laundry_room": {
+            "type": "boolean"
+          },
+          "winter_garden": {
+            "type": "boolean"
+          },
+          "gallery": {
+            "type": "boolean"
+          },
+          "childrens_bedroom": {
+            "type": "boolean"
+          },
+          "library": {
+            "type": "boolean"
+          },
+          "fitness_room": {
+            "type": "boolean"
+          },
+          "playroom": {
+            "type": "boolean"
+          },
+          "billiard_room": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "near_locations": {
+        "properties": {
+          "embankment": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "theatre": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "cinema": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "cafe": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "restaurant": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "sports_center": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "school": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "kindergarten": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "hospital": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "metro": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "public_transport_stop": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "park": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "beach": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "shopping_centre": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "airport": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "railway_station": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "bus_station": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "shop": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "ski_lifts": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "club": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "pharmacy": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "bike_trail": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "resort": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "city": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "village": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "golf_course": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "playground": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "bank": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "car_service": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "spa_centre": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "casino": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "university": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "nature_reserve": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "museum": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          },
+          "business_centre": {
+            "properties": {
+              "distance": "integer",
+              "distance_measure": "string",
+              "time_to_reach": "integer",
+              "transport": "string",
+              "time_measure": "string"
+            },
+            "type": "object",
+            "description": "Can be distance in distance measures: `m` or `km`, or can be time to reach in time measures: `minutes` or `hours`. In our system distance will be converted to time to reach. If time to reach `transport` is required, possible values: [pedestrian, bus, car]"
+          }
+        },
+        "type": "object"
+      },
+      "property_object_description": {
+        "properties": {
+          "main_text": {
+            "properties": {
+              "en": {
+                "type": "string"
+              },
+              "ru": {
+                "type": "string"
+              },
+              "de": {
+                "type": "string"
+              },
+              "it": {
+                "type": "string"
+              },
+              "fr": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "title": {
+            "properties": {
+              "en": {
+                "type": "string"
+              },
+              "ru": {
+                "type": "string"
+              },
+              "de": {
+                "type": "string"
+              },
+              "it": {
+                "type": "string"
+              },
+              "fr": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "balconies_terraces": {
+        "properties": {
+          "balcony": {
+            "properties": {
+              "min": "integer",
+              "max": "integer",
+              "min_area": "integer",
+              "max_area": "integer"
+            },
+            "type": "object",
+            "description": "min/max - count of balconies or terraces. min_area/max_area - areas"
+          },
+          "terrace": {
+            "properties": {
+              "min": "integer",
+              "max": "integer",
+              "min_area": "integer",
+              "max_area": "integer"
+            },
+            "type": "object",
+            "description": "min/max - count of balconies or terraces. min_area/max_area - areas"
+          }
+        },
+        "type": "object"
+      },
+      "property_residential_type": {
+        "properties": {
+          "residence": {
+            "type": "boolean",
+            "name": "string"
+          },
+          "condominium": {
+            "type": "boolean",
+            "name": "string"
+          },
+          "residential_complex_app": {
+            "type": "boolean",
+            "name": "string"
+          },
+          "high_rise": {
+            "type": "boolean",
+            "name": "string"
+          },
+          "hotel": {
+            "type": "boolean",
+            "name": "string"
+          },
+          "gated_community": {
+            "type": "boolean",
+            "name": "string"
+          },
+          "residential_complex_house": {
+            "type": "boolean",
+            "name": "string"
+          },
+          "other": {
+            "type": "boolean",
+            "name": "string"
+          }
+        },
+        "type": "object",
+        "description": "Type and name of residential complex. Optional. Default: `other`"
+      },
+      "property_state": {
+        "properties": {
+          "after_renovation": {
+            "type": "boolean"
+          },
+          "new_development": {
+            "type": "boolean"
+          },
+          "before_renovation": {
+            "type": "boolean"
+          },
+          "other": {
+            "type": "boolean"
+          }
+        },
+        "type": "object",
+        "description": "Optional. Default: `other`"
+      },
+      "residence_architectural_state": {
+        "properties": {
+          "renovation": {
+            "type": "boolean"
+          },
+          "other": {
+            "type": "boolean"
+          }
+        },
+        "type": "object",
+        "description": "Optional. Default: `other`"
+      },
+      "residence_architectural_style": {
+        "properties": {
+          "belle_epoque": {
+            "type": "boolean"
+          },
+          "art_deco": {
+            "type": "boolean"
+          },
+          "high_tech": {
+            "type": "boolean"
+          },
+          "art_nouveau": {
+            "type": "boolean"
+          },
+          "traditional": {
+            "type": "boolean"
+          },
+          "other": {
+            "type": "boolean"
+          }
+        },
+        "type": "object",
+        "description": "Optional. Default: `other`"
+      },
+      "residental_complex_subtype": {
+        "properties": {
+          "house": {
+            "type": "boolean"
+          },
+          "new_building": {
+            "type": "boolean"
+          },
+          "multifamily": {
+            "type": "boolean"
+          },
+          "chalet": {
+            "type": "boolean"
+          },
+          "townhouse": {
+            "type": "boolean"
+          },
+          "villa": {
+            "type": "boolean"
+          },
+          "farm": {
+            "type": "boolean"
+          },
+          "modern": {
+            "type": "boolean"
+          },
+          "historical": {
+            "type": "boolean"
+          },
+          "new": {
+            "type": "boolean"
+          },
+          "other": {
+            "type": "boolean"
+          }
+        },
+        "type": "object",
+        "description": "Optional. Default: `other`"
+      },
+      "window_views": {
+        "properties": {
+          "city": {
+            "type": "boolean"
+          },
+          "city_center": {
+            "type": "boolean"
+          },
+          "sea": {
+            "type": "boolean"
+          },
+          "ocean": {
+            "type": "boolean"
+          },
+          "lake": {
+            "type": "boolean"
+          },
+          "mountains": {
+            "type": "boolean"
+          },
+          "forest": {
+            "type": "boolean"
+          },
+          "valley": {
+            "type": "boolean"
+          },
+          "river": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "dispositions": {
+        "properties": {
+          "other": {
+            "type": "boolean"
+          },
+          "city_centre": {
+            "type": "boolean"
+          },
+          "ski_resort": {
+            "type": "boolean"
+          },
+          "sea": {
+            "type": "boolean"
+          },
+          "forest_park": {
+            "type": "boolean"
+          },
+          "on_a_hill": {
+            "type": "boolean"
+          },
+          "on_the_mountain": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      }
+    },
+    "type": "object",
+    "required": [
+      "property_object_type",
+      "property_images",
+      "property_object_address"
+    ]
+  },
+  "type": "object"
+}

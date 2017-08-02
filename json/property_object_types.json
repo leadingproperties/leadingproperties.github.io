@@ -1,0 +1,110 @@
+{
+  "property_object_types": [
+    {
+      "id": 1,
+      "name": "apartment",
+      "property_object_subtypes": [
+        {
+          "id": 2,
+          "title": "Two-level apartment"
+        },
+        {
+          "id": 6,
+          "title": "Loft"
+        },
+        {
+          "id": 3,
+          "title": "Penthouse"
+        },
+        {
+          "id": 4,
+          "title": "Mansard"
+        },
+        {
+          "id": 1,
+          "title": "Apartment"
+        },
+        {
+          "id": 5,
+          "title": "Studio"
+        },
+        {
+          "id": 20,
+          "title": "three-level apartment"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "house",
+      "property_object_subtypes": [
+        {
+          "id": 8,
+          "title": "Mansion"
+        },
+        {
+          "id": 12,
+          "title": "Country house"
+        },
+        {
+          "id": 11,
+          "title": "Chalet"
+        },
+        {
+          "id": 9,
+          "title": "Castle"
+        },
+        {
+          "id": 21,
+          "title": "townhouse"
+        },
+        {
+          "id": 10,
+          "title": "Villa"
+        },
+        {
+          "id": 7,
+          "title": "House"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "commercial",
+      "property_object_subtypes": [
+        {
+          "id": 23,
+          "title": "Shopping Centre"
+        },
+        {
+          "id": 24,
+          "title": "Mixed use"
+        },
+        {
+          "id": 19,
+          "title": "Office building"
+        },
+        {
+          "id": 16,
+          "title": "Residential"
+        },
+        {
+          "id": 15,
+          "title": "Hotel"
+        },
+        {
+          "id": 13,
+          "title": "Other"
+        },
+        {
+          "id": 22,
+          "title": "Retail"
+        },
+        {
+          "id": 17,
+          "title": "Cafe/Bar/Restaurant"
+        }
+      ]
+    }
+  ]
+}
